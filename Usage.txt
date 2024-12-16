@@ -1,0 +1,5 @@
+To use one of these commands
+
+Example --> fileinfo.c
+
+step1: copy the code into a text file 
