@@ -1,6 +1,10 @@
 /*Author : RAJ ROY*/
-//currently works for most of the program, but not sure about the rest
-//make sure the check the name of the process in the task manager before using the command --> terminate <process_name>
+/*
+    Command terminates a process by name.
+    Currently it works for most of the common programs, but not sure about the rest.
+    Make sure to check the name of the process in the task manager before using the command --> terminate <process_name>
+    The Process Name May differ from the name of the executable file.
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

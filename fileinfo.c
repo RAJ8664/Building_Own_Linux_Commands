@@ -1,4 +1,7 @@
 /*Author : RAJ ROY*/
+/*
+    Command retrieves and displays detailed information about a specified file. 
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

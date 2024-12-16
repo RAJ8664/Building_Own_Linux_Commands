@@ -1,6 +1,6 @@
-# How to Set Up and Use One of This Command Globally
+# How to Set Up and Use One of These Command Globally
 
-Follow these steps to build and use one of thes custom Linux command globally on your system.
+Follow these steps to build and use one of these custom Linux command globally on your system.
 
 ---
 
