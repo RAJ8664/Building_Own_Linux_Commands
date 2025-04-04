@@ -1,7 +1,12 @@
-/*Author : RAJ ROY*/
 /*
-    Command retrieves and displays detailed information about a specified file. 
-*/
+ * fileinfo - Display detailed information about a file
+ *
+ * This utility provides comprehensive information about a specified file,
+ * including permissions, ownership, timestamps, and other metadata.
+ *
+ * Author: RAJ ROY
+ * Usage: fileinfo <filename>
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,6 +23,7 @@ int main(int argc, char* argv[]) {
             exit(EXIT_FAILURE);
         }
 
+        /* Display basic file information */
         printf("File Information:\n");
         printf("\n");
         
@@ -29,26 +35,33 @@ int main(int argc, char* argv[]) {
         printf("Number Of Nlink: %ld\n", current_file.st_nlink);
         printf("\n");
 
-        printf("Last Accessed Time: %s\n", ctime(&current_file.st_atime));
-        printf("Last Modifictaion Time: %s\n", ctime(&current_file.st_mtime));
-        printf("Last Access Cange Time: %s\n", ctime(&current_file.st_ctime));
+        /* Display timestamp information */
+        printf("Last Accessed Time: %s", ctime(&current_file.st_atime));
+        printf("Last Modification Time: %s", ctime(&current_file.st_mtime));
+        printf("Last Status Change Time: %s", ctime(&current_file.st_ctime));
 
+        /* Display file permissions in rwx format */
         printf("File Permissions:\n");
         printf("\n");
 
+        /* Owner permissions */
         printf((current_file.st_mode & S_IRUSR) ? "r" : "-");
         printf((current_file.st_mode & S_IWUSR) ? "w" : "-");
         printf((current_file.st_mode & S_IXUSR) ? "x" : "-");
 
+        /* Group permissions */
         printf((current_file.st_mode & S_IRGRP) ? "r" : "-");
         printf((current_file.st_mode & S_IWGRP) ? "w" : "-");
         printf((current_file.st_mode & S_IXUSR) ? "x" : "-");
     
+        /* Other permissions */
         printf((current_file.st_mode & S_IROTH) ? "r" : "-");
         printf((current_file.st_mode & S_IWOTH) ? "w" : "-");
         printf((current_file.st_mode & S_IXOTH) ? "x" : "-");
         printf("\n");
     }
-    else printf("Usage: fileinfo <filename>\n");
+    else {
+        printf("Usage: fileinfo <filename>\n");
+    }
     return 0;
 }
