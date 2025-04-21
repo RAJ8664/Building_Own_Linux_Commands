@@ -57,7 +57,8 @@ int main() {
             if (fgets(password, sizeof(password), fp2) != NULL) {
                 password[strcspn(password, "\n")] = 0;
                 printf("Password: %s\n", password);
-            } else {
+            }
+            else {
                 printf("Password: Not found or no password required\n");
             }
             printf("\n");
