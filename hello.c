@@ -14,6 +14,7 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
+    /* Check if any arguments are provided */
     if (argc > 1) {
         /* Print greeting with provided names */
         printf("Hello ");
